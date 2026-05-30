@@ -14,6 +14,7 @@ body { background-color: var(--bg-dark); color: var(--text-main); font-family: s
 .container { width: 90%; max-width: var(--max-width); margin: 0 auto; }
 .highlight { color: var(--accent); }
 
+/* Header & Nav */
 header { background-color: rgba(15, 23, 42, 0.9); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #334155; }
 nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 0; }
 .logo { font-size: 1.4rem; font-weight: 700; color: var(--accent); }
@@ -21,6 +22,7 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 .nav-links a { color: var(--text-muted); text-decoration: none; font-weight: 500; }
 .nav-links a:hover { color: var(--accent); }
 
+/* Hero */
 .hero { min-height: 70vh; display: flex; align-items: center; padding: 4rem 0; }
 .hero-text h1 { font-size: 3rem; font-weight: 800; margin-bottom: 0.5rem; }
 .hero-text h2 { font-size: 1.8rem; color: var(--text-muted); margin-bottom: 1.5rem; }
@@ -33,12 +35,46 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 .secondary-btn { border: 2px solid var(--accent); color: var(--accent); }
 .secondary-btn:hover { background-color: rgba(56, 189, 248, 0.1); }
 
+/* Skills */
 .skills-section { background-color: var(--bg-card); padding: 4rem 0; }
 .section-title { font-size: 2rem; margin-bottom: 2.5rem; text-align: center; }
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
 .skill-category { background-color: var(--bg-dark); padding: 1.5rem; border-radius: 8px; border: 1px solid #334155; }
 .skill-category h3 { color: var(--accent); margin-bottom: 0.5rem; }
 
+/* Education */
+.education-section { padding: 4rem 0; }
+.education-card { background-color: var(--bg-card); border-radius: 8px; border: 1px solid #334155; padding: 2rem; margin-top: 1.5rem; }
+.edu-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem; }
+.edu-header h3 { font-size: 1.4rem; color: var(--accent); }
+.edu-date { background-color: rgba(56, 189, 248, 0.1); color: var(--accent); padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
+.institution { font-weight: 600; font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.75rem; }
+.edu-details { color: var(--text-muted); font-size: 0.95rem; }
+
+/* Professional Experience Style Sheet */
+.experience-section { background-color: var(--bg-card); padding: 4rem 0; }
+.experience-wrapper { max-width: 900px; margin: 0 auto; }
+.company-card { background-color: var(--bg-dark); border: 1px solid #334155; border-radius: 10px; padding: 2.2rem; }
+
+.company-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #1e293b; padding-bottom: 1rem; margin-bottom: 2rem; }
+.company-name { font-family: "Courier New", Courier, monospace; font-size: 1.8rem; color: #ffffff; font-weight: 800; letter-spacing: 1px; }
+
+.role-block { position: relative; padding-left: 1.8rem; border-left: 2px solid #334155; margin-bottom: 2.5rem; }
+.role-block:last-child { margin-bottom: 0; }
+.role-block::before { content: ''; position: absolute; left: -6px; top: 8px; width: 10px; height: 10px; background-color: var(--accent); border-radius: 50%; }
+
+/* Automatically distributes Space elegantly without breaking sizes */
+.role-row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 0.8rem; }
+.role-title { font-size: 1.25rem; color: var(--accent); font-weight: 600; }
+.job-type { font-size: 0.95rem; color: var(--text-muted); font-weight: 400; font-style: italic; margin-left: 0.2rem; }
+
+.role-meta { display: flex; align-items: center; }
+.role-date { font-size: 0.95rem; color: var(--text-muted); font-weight: 500; white-space: nowrap; }
+
+/* Micro-indentation that stays intact on mobile layout */
+.role-desc { color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; padding-left: 0.2rem; max-width: 800px; }
+
+/* Projects Section */
 .projects-section { padding: 4rem 0; }
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
 .project-card { background-color: var(--bg-card); border-radius: 8px; border: 1px solid #334155; padding: 2rem; }
@@ -48,129 +84,18 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 .project-tech span { background-color: var(--bg-dark); color: var(--text-muted); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; }
 .project-links a { color: var(--accent); text-decoration: none; font-weight: 600; }
 
+/* Footer */
 footer { background-color: #0b0f19; padding: 3rem 0; text-align: center; border-top: 1px solid #1e293b; }
 .footer-content .email { font-size: 1.2rem; color: var(--accent); margin: 0.5rem 0; }
 .copyright { font-size: 0.8rem; color: #475569; margin-top: 1rem; }
 
-/* Education Styling */
-.education-section { padding: 4rem 0; }
-.education-card { background-color: var(--bg-card); border-radius: 8px; border: 1px solid #334155; padding: 2rem; margin-top: 1.5rem; }
-.edu-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 0.5rem; }
-.edu-header h3 { font-size: 1.4rem; color: var(--accent); }
-.edu-date { background-color: rgba(56, 189, 248, 0.1); color: var(--accent); padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
-.institution { font-weight: 600; font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.75rem; }
-.edu-details { color: var(--text-muted); font-size: 0.95rem; }
-
-/* Experience Section Styles */
-.experience-section { 
-    background-color: var(--bg-card); 
-    padding: 5rem 0; 
-}
-.experience-wrapper { 
-    max-width: 900px; 
-    margin: 0 auto; 
-}
-.company-card { 
-    background-color: var(--bg-dark); 
-    border: 1px solid #334155; 
-    border-radius: 10px; 
-    padding: 2.5rem; 
-}
-
-/* Company Font Customization */
-.company-header { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    border-bottom: 2px solid #1e293b; 
-    padding-bottom: 1rem; 
-    margin-bottom: 2rem; 
-}
-.company-name { 
-    font-family: "Courier New", Courier, monospace; /* Using a distinct geometric font for tech brand contrast */
-    font-size: 1.8rem; 
-    color: #ffffff; 
-    font-weight: 800; 
-    letter-spacing: 1px;
-}
-.duration-badge { 
-    background-color: rgba(56, 189, 248, 0.1); 
-    color: var(--accent); 
-    padding: 0.3rem 0.8rem; 
-    border-radius: 20px; 
-    font-size: 0.85rem; 
-    font-weight: 600; 
-}
-
-/* Structural Layout for Roles */
-.role-block { 
-    position: relative; 
-    padding-left: 2rem; 
-    border-left: 2px solid #1e293b; 
-    margin-bottom: 2.5rem; 
-}
-.role-block:last-child { 
-    margin-bottom: 0; 
-    padding-bottom: 0;
-}
-.role-block::before { 
-    content: ''; 
-    position: absolute; 
-    left: -6px; 
-    top: 8px; 
-    width: 10px; 
-    height: 10px; 
-    background-color: var(--accent); 
-    border-radius: 50%; 
-}
-
-/* Aligns Title to Left and Location/Date directly in front on the Right */
-.role-row { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: baseline; 
-    flex-wrap: wrap; 
-    gap: 1rem;
-    margin-bottom: 1rem; 
-}
-.role-title { 
-    font-size: 1.25rem; 
-    color: var(--accent); 
-    font-weight: 600; 
-}
-.job-type {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    font-weight: 400;
-}
-
-/* Metadata alignment styling */
-.role-meta {
-    display: flex;
-    gap: 1.5rem;
-    font-size: 0.9rem;
-    color: var(--text-muted);
-}
-.role-location i {
-    color: var(--accent);
-    margin-right: 0.3rem;
-}
-.role-date { 
-    font-weight: 500;
-    margin-left: 10rem;
-}
-
-/* Indented description text block */
-.role-desc { 
-    color: #cbd5e1; 
-    font-size: 0.95rem; 
-    line-height: 1.6; 
-    margin-left: 20rem; /* Indents description text cleanly under the heading track */
-    max-width: 750px;
-}
-
-/* Mobile Responsiveness adjustment */
+/* MEDIA QUERIES: Flawless layout transitions on smaller screens */
 @media (max-width: 768px) {
-    .role-row { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
-    .role-meta { flex-direction: column; gap: 0.2rem; }
+    .hero-text h1 { font-size: 2.2rem; }
+    .hero-text h2 { font-size: 1.4rem; }
+    .nav-links { gap: 1rem; }
+    
+    /* Safely stack content layout on phones */
+    .role-row { flex-direction: column; align-items: flex-start; gap: 0.4rem; margin-bottom: 0.6rem; }
+    .company-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
 }
