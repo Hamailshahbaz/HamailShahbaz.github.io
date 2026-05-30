@@ -5,7 +5,7 @@
     --text-muted: #94a3b8;
     --accent: #38bdf8;
     --accent-hover: #7dd3fc;
-    --max-width: 1100px;
+    --max-width: 1200px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -51,28 +51,28 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 .institution { font-weight: 600; font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.75rem; }
 .edu-details { color: var(--text-muted); font-size: 0.95rem; }
 
-/* Professional Experience Style Sheet */
+/* RECONFIGURED PROFESSIONAL EXPERIENCE VIEWPORT */
 .experience-section { background-color: var(--bg-card); padding: 4rem 0; }
-.experience-wrapper { max-width: 900px; margin: 0 auto; }
-.company-card { background-color: var(--bg-dark); border: 1px solid #334155; border-radius: 10px; padding: 2.2rem; }
+.experience-wrapper { width: 100%; max-width: 100%; margin: 0 auto; }
+.company-card { background-color: var(--bg-dark); border: 1px solid #334155; border-radius: 10px; padding: 2.5rem; width: 100%; }
 
-.company-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #1e293b; padding-bottom: 1rem; margin-bottom: 2rem; }
+.company-header { border-bottom: 2px solid #1e293b; padding-bottom: 1rem; margin-bottom: 2rem; }
 .company-name { font-family: "Courier New", Courier, monospace; font-size: 1.8rem; color: #ffffff; font-weight: 800; letter-spacing: 1px; }
 
-.role-block { position: relative; padding-left: 1.8rem; border-left: 2px solid #334155; margin-bottom: 2.5rem; }
+.role-block { position: relative; padding-left: 2rem; border-left: 2px solid #334155; margin-bottom: 2.5rem; width: 100%; }
 .role-block:last-child { margin-bottom: 0; }
 .role-block::before { content: ''; position: absolute; left: -6px; top: 8px; width: 10px; height: 10px; background-color: var(--accent); border-radius: 50%; }
 
-/* Automatically distributes Space elegantly without breaking sizes */
-.role-row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 0.8rem; }
-.role-title { font-size: 1.25rem; color: var(--accent); font-weight: 600; }
-.job-type { font-size: 0.95rem; color: var(--text-muted); font-weight: 400; font-style: italic; margin-left: 0.2rem; }
+/* Keeps Title Left and Date Right on Desktop */
+.role-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem; width: 100%; }
+.role-title { font-size: 1.3rem; color: var(--accent); font-weight: 600; }
+.job-type { font-size: 0.95rem; color: var(--text-muted); font-weight: 400; font-style: normal; margin-left: 0.4rem; }
 
 .role-meta { display: flex; align-items: center; }
-.role-date { font-size: 0.95rem; color: var(--text-muted); font-weight: 500; white-space: nowrap; }
+.role-date { font-size: 0.95rem; color: var(--text-muted); font-weight: 500; }
 
-/* Micro-indentation that stays intact on mobile layout */
-.role-desc { color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; padding-left: 0.2rem; max-width: 800px; }
+/* Moves description text down and lets it use the full horizontal span */
+.role-desc { color: #cbd5e1; font-size: 1rem; line-height: 1.6; max-width: 100%; width: 100%; display: block; clear: both; text-align: left; margin-top: 0.5rem; }
 
 /* Projects Section */
 .projects-section { padding: 4rem 0; }
@@ -89,13 +89,10 @@ footer { background-color: #0b0f19; padding: 3rem 0; text-align: center; border-
 .footer-content .email { font-size: 1.2rem; color: var(--accent); margin: 0.5rem 0; }
 .copyright { font-size: 0.8rem; color: #475569; margin-top: 1rem; }
 
-/* MEDIA QUERIES: Flawless layout transitions on smaller screens */
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .hero-text h1 { font-size: 2.2rem; }
     .hero-text h2 { font-size: 1.4rem; }
     .nav-links { gap: 1rem; }
-    
-    /* Safely stack content layout on phones */
-    .role-row { flex-direction: column; align-items: flex-start; gap: 0.4rem; margin-bottom: 0.6rem; }
-    .company-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    .role-row { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
 }
