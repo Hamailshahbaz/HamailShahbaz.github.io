@@ -62,17 +62,114 @@ footer { background-color: #0b0f19; padding: 3rem 0; text-align: center; border-
 .edu-details { color: var(--text-muted); font-size: 0.95rem; }
 
 /* Experience Section Styles */
-.experience-section { background-color: var(--bg-card); padding: 5rem 0; }
-.experience-wrapper { max-width: 800px; margin: 0 auto; }
-.company-card { background-color: var(--bg-dark); border: 1px solid #334155; border-radius: 10px; padding: 2.5rem; }
-.company-header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid #334155; padding-bottom: 1rem; margin-bottom: 1.5rem; }
-.company-meta h3 { font-size: 1.6rem; color: var(--text-main); font-weight: 700; }
-.company-meta .location { color: var(--text-muted); font-size: 0.9rem; }
-.duration-badge { background-color: rgba(56, 189, 248, 0.1); color: var(--accent); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
-.role-block { position: relative; padding-left: 1.5rem; border-left: 2px solid #334155; margin-bottom: 2rem; }
-.role-block:last-child { margin-bottom: 0; }
-.role-block::before { content: ''; position: absolute; left: -6px; top: 6px; width: 10px; height: 10px; background-color: var(--accent); border-radius: 50%; }
-.role-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 0.4rem; }
-.role-header h4 { font-size: 1.15rem; color: var(--accent); font-weight: 600; }
-.role-date { font-size: 0.85rem; color: var(--text-muted); }
-.role-desc { color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; }
+.experience-section { 
+    background-color: var(--bg-card); 
+    padding: 5rem 0; 
+}
+.experience-wrapper { 
+    max-width: 900px; 
+    margin: 0 auto; 
+}
+.company-card { 
+    background-color: var(--bg-dark); 
+    border: 1px solid #334155; 
+    border-radius: 10px; 
+    padding: 2.5rem; 
+}
+
+/* Company Font Customization */
+.company-header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    border-bottom: 2px solid #1e293b; 
+    padding-bottom: 1rem; 
+    margin-bottom: 2rem; 
+}
+.company-name { 
+    font-family: "Courier New", Courier, monospace; /* Using a distinct geometric font for tech brand contrast */
+    font-size: 1.8rem; 
+    color: #ffffff; 
+    font-weight: 800; 
+    letter-spacing: 1px;
+}
+.duration-badge { 
+    background-color: rgba(56, 189, 248, 0.1); 
+    color: var(--accent); 
+    padding: 0.3rem 0.8rem; 
+    border-radius: 20px; 
+    font-size: 0.85rem; 
+    font-weight: 600; 
+}
+
+/* Structural Layout for Roles */
+.role-block { 
+    position: relative; 
+    padding-left: 2rem; 
+    border-left: 2px solid #1e293b; 
+    margin-bottom: 2.5rem; 
+}
+.role-block:last-child { 
+    margin-bottom: 0; 
+    padding-bottom: 0;
+}
+.role-block::before { 
+    content: ''; 
+    position: absolute; 
+    left: -6px; 
+    top: 8px; 
+    width: 10px; 
+    height: 10px; 
+    background-color: var(--accent); 
+    border-radius: 50%; 
+}
+
+/* Aligns Title to Left and Location/Date directly in front on the Right */
+.role-row { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: baseline; 
+    flex-wrap: wrap; 
+    gap: 1rem;
+    margin-bottom: 1rem; 
+}
+.role-title { 
+    font-size: 1.25rem; 
+    color: var(--accent); 
+    font-weight: 600; 
+}
+.job-type {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+/* Metadata alignment styling */
+.role-meta {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+.role-location i {
+    color: var(--accent);
+    margin-right: 0.3rem;
+}
+.role-date { 
+    font-weight: 500;
+}
+
+/* Indented description text block */
+.role-desc { 
+    color: #cbd5e1; 
+    font-size: 0.95rem; 
+    line-height: 1.6; 
+    margin-left: 0.5rem; /* Indents description text cleanly under the heading track */
+    max-width: 750px;
+}
+
+/* Mobile Responsiveness adjustment */
+@media (max-width: 768px) {
+    .role-row { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+    .role-meta { flex-direction: column; gap: 0.2rem; }
+}
