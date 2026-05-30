@@ -157,6 +157,7 @@ footer { background-color: #0b0f19; padding: 3rem 0; text-align: center; border-
 }
 .role-date { 
     font-weight: 500;
+    margin-left: 10rem;
 }
 
 /* Indented description text block */
@@ -164,7 +165,7 @@ footer { background-color: #0b0f19; padding: 3rem 0; text-align: center; border-
     color: #cbd5e1; 
     font-size: 0.95rem; 
     line-height: 1.6; 
-    margin-left: 0.5rem; /* Indents description text cleanly under the heading track */
+    margin-left: 20rem; /* Indents description text cleanly under the heading track */
     max-width: 750px;
 }
 
