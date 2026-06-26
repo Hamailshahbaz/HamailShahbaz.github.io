@@ -1,0 +1,163 @@
+/* ================================================================
+   hero.css — Hero / landing section (#home)
+   ================================================================ */
+
+#home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 5vw 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Radial color glow in the background */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 70% 50%, rgba(99, 102, 241, 0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(16, 185, 129, 0.06) 0%, transparent 60%);
+}
+
+/* Subtle dot grid overlay */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(99, 102, 241, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at 60% 50%, black 30%, transparent 70%);
+}
+
+/* All text content sits above bg layers */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
+
+/* "Available for AI/ML roles" pill at the top */
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px;
+  color: var(--indigo-glow);
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: 100px;
+  padding: 5px 14px;
+  margin-bottom: 28px;
+}
+/* Pulsing green dot inside the pill */
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+  50%       { opacity: 0.8; box-shadow: 0 0 0 5px rgba(16, 185, 129, 0); }
+}
+
+/* Main heading */
+.hero-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(42px, 7vw, 80px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.hero-name .accent {
+  color: var(--indigo-glow);
+}
+
+/* "AI / ML Engineer" subtitle */
+.hero-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(18px, 3vw, 28px);
+  font-weight: 300;
+  color: var(--slate);
+  margin-bottom: 24px;
+  letter-spacing: -0.3px;
+}
+
+/* Short bio paragraph */
+.hero-desc {
+  font-size: 16px;
+  color: var(--slate);
+  max-width: 560px;
+  line-height: 1.75;
+  margin-bottom: 40px;
+}
+
+/* Animated terminal line */
+.hero-terminal {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--slate-dim);
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.hero-terminal .prompt { color: var(--indigo); }
+.hero-terminal .typed  { color: var(--cream); }
+.hero-terminal .cursor {
+  display: inline-block;
+  width: 2px;
+  height: 15px;
+  background: var(--indigo-glow);
+  animation: blink 1.1s step-end infinite;
+  vertical-align: middle;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* CTA buttons row */
+.hero-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 56px;
+}
+
+/* Stats strip at the bottom of the hero */
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+.stat-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-num span {
+  color: var(--indigo-glow);
+}
+.stat-label {
+  font-size: 12px;
+  color: var(--slate);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}

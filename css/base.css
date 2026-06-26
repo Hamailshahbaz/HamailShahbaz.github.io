@@ -1,0 +1,208 @@
+/* ================================================================
+   base.css — Design tokens, reset, shared utilities
+   This file is the single source of truth for colors, fonts,
+   spacing, and any class used across multiple sections.
+   ================================================================ */
+
+
+/* ── DESIGN TOKENS ── */
+:root {
+  /* Colors */
+  --navy:        #0A0F1E;   /* page background */
+  --navy-2:      #111827;   /* alternate section background */
+  --navy-3:      #1C2539;   /* card background */
+  --navy-4:      #243050;   /* card hover / deeper accent */
+  --indigo:      #6366F1;   /* primary accent */
+  --indigo-dim:  #4F52C4;   /* darker indigo (hover states) */
+  --indigo-glow: #818CF8;   /* lighter indigo (text on dark) */
+  --cream:       #F0EDE8;   /* primary text */
+  --slate:       #94A3B8;   /* secondary text */
+  --slate-dim:   #64748B;   /* muted text */
+  --white:       #FFFFFF;
+  --green:       #10B981;   /* success / available badge */
+  --red:         #F43F5E;   /* danger */
+  --amber:       #F59E0B;   /* certifications / warnings */
+
+  /* Border radius */
+  --radius-sm:  6px;
+  --radius:     12px;
+  --radius-lg:  20px;
+}
+
+
+/* ── RESET ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ── BASE ── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--navy);
+  color: var(--cream);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+
+/* ── SHARED SECTION LAYOUT ── */
+section {
+  padding: 100px 5vw;
+}
+
+/* Alternating background for visual rhythm between sections */
+#projects,
+#education {
+  background: var(--navy-2);
+}
+
+#experience,
+#skills,
+#contact {
+  background: var(--navy);
+}
+
+#about {
+  background: var(--navy-2);
+}
+
+
+/* ── SHARED SECTION HEADER ── */
+/* Used at the top of every section */
+.section-header {
+  margin-bottom: 56px;
+}
+
+.section-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  color: var(--indigo-glow);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+
+/* Colored underline bar beneath section title */
+.section-line {
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--indigo), var(--green));
+  border-radius: 2px;
+  margin-top: 16px;
+}
+
+
+/* ── SHARED BUTTON STYLES ── */
+/* Used in hero and potentially elsewhere */
+.btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: var(--indigo);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--indigo-glow);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.35);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--cream);
+  border: 1px solid rgba(240, 237, 232, 0.2);
+}
+.btn-ghost:hover {
+  border-color: rgba(240, 237, 232, 0.5);
+  transform: translateY(-2px);
+}
+
+
+/* ── SCROLL ANIMATION ── */
+/* Elements start invisible; js/animations.js adds .visible when they enter view */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ── FOOTER ── */
+footer {
+  padding: 28px 5vw;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+footer p {
+  font-size: 13px;
+  color: var(--slate-dim);
+}
+footer a {
+  color: var(--indigo-glow);
+  text-decoration: none;
+}
+
+
+/* ── REDUCED MOTION ── */
+/* Disables all transitions/animations for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+  .fade-up {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+/* ── MOBILE SHARED ── */
+@media (max-width: 768px) {
+  section {
+    padding: 72px 5vw;
+  }
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -1,0 +1,88 @@
+/* ================================================================
+   about.css — About section (#about): hobbies + future goals
+   ================================================================ */
+
+/* ── HOBBIES ── */
+
+/* Responsive grid of hobby cards */
+.hobby-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+.hobby-card {
+  background: var(--navy-3);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.hobby-card:hover {
+  border-color: rgba(99, 102, 241, 0.25);
+  transform: translateY(-3px);
+}
+
+.hobby-emoji {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+.hobby-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--cream);
+  margin-bottom: 4px;
+}
+.hobby-sub {
+  font-size: 12px;
+  color: var(--slate);
+}
+
+
+/* ── FUTURE GOALS ── */
+
+/* Vertical list of numbered goal items */
+.goals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.goal-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 24px;
+  background: var(--navy-3);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius);
+  transition: border-color 0.2s;
+}
+.goal-item:hover {
+  border-color: rgba(99, 102, 241, 0.25);
+}
+
+/* Large dim number on the left */
+.goal-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: rgba(99, 102, 241, 0.3);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 36px;
+}
+
+.goal-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+.goal-desc {
+  font-size: 14px;
+  color: var(--slate);
+  line-height: 1.65;
+}

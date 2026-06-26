@@ -1,0 +1,126 @@
+/* ================================================================
+   projects.css — Projects section (#projects)
+   ================================================================ */
+
+/* Three-column responsive grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Card container */
+.proj-card {
+  background: var(--navy-3);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top indigo accent line that appears on hover */
+.proj-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--indigo), transparent);
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.proj-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+.proj-card:hover::before {
+  opacity: 1;
+}
+
+/* Top row: emoji icon + GitHub/demo links */
+.proj-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.proj-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+/* GitHub and Live demo buttons */
+.proj-links {
+  display: flex;
+  gap: 8px;
+}
+.proj-link {
+  font-size: 11.5px;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.proj-link.gh {
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--slate);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.proj-link.gh:hover {
+  background: rgba(255, 255, 255, 0.13);
+  color: var(--cream);
+}
+.proj-link.demo {
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--green);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+.proj-link.demo:hover {
+  background: rgba(16, 185, 129, 0.22);
+}
+
+/* Project name */
+.proj-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+
+/* Project description — flex: 1 pushes tags to the bottom */
+.proj-desc {
+  font-size: 14px;
+  color: var(--slate);
+  line-height: 1.65;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+/* Tech stack tags at the bottom of the card */
+.proj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.proj-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--indigo-glow);
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 4px;
+  padding: 3px 9px;
+}

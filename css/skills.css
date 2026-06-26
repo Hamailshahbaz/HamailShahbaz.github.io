@@ -1,0 +1,43 @@
+/* ================================================================
+   skills.css — Skills / tech stack section (#skills)
+   ================================================================ */
+
+/* Four-column responsive grid of skill groups */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+/* "DEEP LEARNING", "COMPUTER VISION" etc. */
+.skill-group-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--slate-dim);
+  margin-bottom: 14px;
+}
+
+/* Row of chips inside a group */
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Individual skill chip */
+.skill-chip {
+  font-size: 12.5px;
+  color: var(--cream);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  padding: 5px 13px;
+  transition: all 0.15s;
+}
+.skill-chip:hover {
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.3);
+  color: var(--indigo-glow);
+}

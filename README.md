@@ -1,2 +1,0 @@
-# HamailShahbaz.github.io
-protfolio

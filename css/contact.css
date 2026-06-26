@@ -1,0 +1,105 @@
+/* ================================================================
+   contact.css — Contact section (#contact)
+   ================================================================ */
+
+/* Two-column layout: tagline left, links right */
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* Large headline on the left */
+.contact-tagline {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(24px, 4vw, 40px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+}
+
+.contact-sub {
+  font-size: 15px;
+  color: var(--slate);
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+/* "Available immediately" green badge */
+.avail-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--green);
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 100px;
+  padding: 8px 18px;
+  margin-top: 28px;
+}
+/* Pulsing green dot */
+.avail-badge::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: pulse-dot 2s infinite;
+}
+
+/* Stack of link rows on the right */
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Individual contact link row */
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--navy-3);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--cream);
+  font-size: 14px;
+  transition: all 0.2s;
+}
+.contact-link:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  background: rgba(99, 102, 241, 0.07);
+  transform: translateX(4px);
+}
+
+.contact-link-icon {
+  font-size: 18px;
+  width: 24px;
+  text-align: center;
+}
+.contact-link-label {
+  color: var(--slate);
+  font-size: 12px;
+}
+
+/* Pulsing dot animation (shared with hero-eyebrow) */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+  50%       { opacity: 0.8; box-shadow: 0 0 0 5px rgba(16, 185, 129, 0); }
+}
+
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
