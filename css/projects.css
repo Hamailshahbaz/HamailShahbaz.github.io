@@ -2,15 +2,43 @@
    projects.css — Projects section (#projects)
    ================================================================ */
 
-/* Three-column responsive grid */
+/* Horizontal scrolling track */
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  flex-direction: row;
   gap: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 12px 6px 28px 6px; /* Bottom padding gives space for card shadow/scrollbar */
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory; /* Snaps cards cleanly into view while scrolling */
+  -webkit-overflow-scrolling: touch;
 }
 
-/* Card container */
+/* Custom Scrollbar Styling */
+.projects-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.projects-grid::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.projects-grid::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+}
+
+.projects-grid::-webkit-scrollbar-thumb:hover {
+  background: var(--indigo);
+}
+
+/* Card container (Fixed width for horizontal row) */
 .proj-card {
+  flex: 0 0 340px; /* Prevents cards from shrinking; sets fixed width */
+  max-width: 340px;
+  scroll-snap-align: start; /* Card snaps to the left edge when scrolling */
   background: var(--navy-3);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: var(--radius);
@@ -123,4 +151,12 @@
   border: 1px solid rgba(99, 102, 241, 0.2);
   border-radius: 4px;
   padding: 3px 9px;
+}
+
+/* Responsive adjustment for mobile screens */
+@media (max-width: 600px) {
+  .proj-card {
+    flex: 0 0 85vw; /* Sets width to 85% of screen width on small devices */
+    max-width: 85vw;
+  }
 }
